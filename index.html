@@ -1,5 +1,6 @@
 <html class="kwhsiung.github.io">
 <style>
+
 .jf-loading body { /*載入中不顯示*/
       opacity: 0;
       visibility: hidden;
@@ -7,6 +8,11 @@
 
 body {
   font-family: 'jf-jinxuan';
+  font-weight: 300;
+}
+
+body > p {
+  max-width: 85%;
 }
 
 .projects {
@@ -19,11 +25,11 @@ body {
 }
 
 img {
-    max-width: 85%;
+    max-width: 100%;
     height: auto;
     width: auto;
     display: block;
-    margin: auto;
+    margin-left: 5em;
     border: solid 3px #ccc
 }
 
@@ -39,7 +45,18 @@ h1 {
   letter-spacing: 5;
   font-size: 50;
   line-height: 1em;
-  padding-left: 100px
+  font-weight: 300;
+}
+
+@media (max-width: 700px) {
+  img {
+      max-width: 85%;
+      height: auto;
+      width: auto;
+      display: block;
+      margin-left: 2em;
+      border: solid 3px #ccc
+  }
 }
 </style>
 
@@ -53,50 +70,62 @@ h1 {
 </head>
 
 <h1 id="my-name">熊凱文</h1>
-<p>資料視覺化<p>
+<p id="my-description">喜愛製作忠實且兼具易於裡解特色的資料視覺化<p>
 
 <p>
 <a class="projects" href="http://www.google.com">
+  台北物價高不高？利用圖表一起來探索 2015 年全球 71 座城市生活花費
 <img id="col" src="col.png" />
 </a>
 </p>
 
 <p>
 <a class="projects" href="http://www.google.com">
+  觀光客在台北旅遊會花多少錢？利用圖表一起來探索 2015 年全球 71 座城市旅遊花費
 <img src="cot.png" />
 </a>
 </p>
 
 <p>
 <a class="projects" href="http://www.google.com">
+  臺北市取消「禁行機車」路段近五年交通事故件數比較
 <img src="traffic.png" />
 </a>
 </p>
 
 <p>
 <a class="projects" href="http://www.google.com">
+  Facebook 單篇文章評論情況泡泡圖
 <img src="bubble.png" />
 </a>
 </p>
 <script>
-// d3.select(window)
-// .on("resize", function(d) {
-//   var tt = d3.select("img")
-//   .style("margin-left");
-//
-//
-//   d3.select("#my-name")
-//   .style("margin-left", function() { return tt; })
-//
-// });
-//
-// var t = d3.select("img")
-// .style("margin-left");
-//
-// console.log(t)
-//
-// d3.select("#my-name")
-// .style("margin-left", function() { return t; })
+d3.select(window)
+.on("resize", function() {
+  var t = d3.select("#col")
+  .style("margin-left");
+
+  console.log(t)
+
+  d3.select("#my-name")
+  .style("margin-left", t);
+  d3.select("#my-description")
+  .style("margin-left", t);
+  d3.selectAll(".projects")
+  .style("margin-left", t);
+})
+
+var t = d3.select("#col")
+.style("margin-left");
+
+console.log(t)
+
+d3.select("#my-name")
+.style("margin-left", t);
+d3.select("#my-description")
+.style("margin-left", t);
+d3.selectAll(".projects")
+.style("margin-left", t);
 
 </script>
 </html>
