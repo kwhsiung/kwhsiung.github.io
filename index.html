@@ -46,9 +46,21 @@ h2 {
   margin-top: -1em;
 }
 
-a {
+.projects {
   text-decoration: none;
   color: steelblue;
+}
+
+.fa-icons-first {
+  text-decoration: none;
+  color: black;
+}
+
+.fa-icons {
+  text-decoration: none;
+  color: black;
+  margin-left: .5em;
+
 }
 
 @media (max-width: 700px) {
@@ -62,43 +74,51 @@ a {
 <head>
   <script src="jf-production-ver.js"></script>
   <script src="//d3js.org/d3.v3.min.js"></script>
-  <script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <h1 class="title" id="my-name">熊凱文</h1>
 <p id="my-description">喜愛製作忠實且兼具易於理解特色的資料視覺化<p>
 
+<a class="fa-icons-first" href="https://github.com/kwhsiung" target="_blank">
+  <i style="font-size:24px" class="fa">&#xf09b;</i>
+</a>
+<a class="fa-icons" href="https://www.facebook.com/kaiwenhsiung" target="_blank">
+  <i style="font-size:24px" class="fa">&#xf082;</i>
+</a>
+<a class="fa-icons" href="mailto:kaiwenhsiung@gmail.com" target="_blank">
+  <i style="font-size:24px" class="fa">&#xf0e0;</i>
+</a>
+
+
 <h2 class="title" id="my-projects">專案作品</h2>
 
 <p>
-<a class="projects" href="https://kwhsiung.github.io/cost-of-living/" target="_blank">
-  台北物價高不高？
-<img id="col" src="col.png" />
-</a>
+  <a class="projects" href="https://kwhsiung.github.io/cost-of-living/" target="_blank">
+    台北物價高不高？
+  <img id="col" src="col.png" />
+  </a>
 </p>
 
 <p>
-<a class="projects" href="https://kwhsiung.github.io/cost-of-traveling/" target="_blank">
-  觀光客在台北旅遊會花多少錢？
-<img src="cot.png" />
-</a>
+  <a class="projects" href="https://kwhsiung.github.io/cost-of-traveling/" target="_blank">
+    觀光客在台北旅遊會花多少錢？
+  <img src="cot.png" />
+  </a>
 </p>
 
 <p>
-<a class="projects" href="https://kwhsiung.github.io/traffic-accident-bar/" target="_blank">
-  臺北市取消「禁行機車」路段近五年交通事故件數比較
-<img src="traffic.png" />
-</a>
+  <a class="projects" href="https://kwhsiung.github.io/traffic-accident-bar/" target="_blank">
+    臺北市取消「禁行機車」路段近五年交通事故件數比較
+  <img src="traffic.png" />
+  </a>
 </p>
 
 <p>
-<a class="projects" href="https://kwhsiung.github.io/fb-comment-bubbles/" target="_blank">
-  Facebook 單篇文章評論情況泡泡圖
-<img src="bubble.png" />
-</a>
+  <a class="projects" href="https://kwhsiung.github.io/fb-comment-bubbles/" target="_blank">
+    Facebook 單篇文章評論情況泡泡圖
+  <img src="bubble.png" />
+  </a>
 </p>
 <script>
 d3.select(window)
@@ -112,10 +132,12 @@ d3.select(window)
   .style("margin-left", img_margin_left);
   d3.select("#my-description")
   .style("margin-left", img_margin_left);
-  d3.selectAll(".projects")
+  d3.selectAll(".fa-icons-first")
   .style("margin-left", img_margin_left);
   d3.select("#my-projects")
-  .style("width", img_width)
+  // .style("width", img_width)
+  .style("margin-left", img_margin_left);
+  d3.selectAll(".projects")
   .style("margin-left", img_margin_left);
 })
 
@@ -126,10 +148,13 @@ d3.selectAll("#my-name")
 .style("margin-left", img_margin_left);
 d3.select("#my-description")
 .style("margin-left", img_margin_left);
-d3.selectAll(".projects")
+d3.selectAll(".fa-icons-first")
 .style("margin-left", img_margin_left);
 d3.select("#my-projects")
 .style("margin-left", img_margin_left);
+d3.selectAll(".projects")
+.style("margin-left", img_margin_left);
+
 
 </script>
 </html>
