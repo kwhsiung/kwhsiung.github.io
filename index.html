@@ -49,6 +49,9 @@ h2 {
 #my-projects {
   font-size: 2em;
 }
+#footer {
+  font-size: 1em;
+}
 
 .projects {
   text-decoration: none;
@@ -126,6 +129,9 @@ h2 {
   <img src="bubble.png" />
   </a>
 </p>
+
+<p id="footer">2017/02/16<p>
+
 <script>
 d3.select(window)
 .on("resize", function() {
@@ -145,6 +151,8 @@ d3.select(window)
   .style("margin-left", img_margin_left);
   d3.selectAll(".projects")
   .style("margin-left", img_margin_left);
+  d3.select("#footer")
+  .style("margin-left", img_margin_left);
 })
 
 var img_margin_left = d3.select("img")
@@ -159,6 +167,8 @@ d3.selectAll(".fa-icons-first")
 d3.select("#my-projects")
 .style("margin-left", img_margin_left);
 d3.selectAll(".projects")
+.style("margin-left", img_margin_left);
+d3.select("#footer")
 .style("margin-left", img_margin_left);
 
 
